@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crisis de Motociclistas en México | Observatorio de Seguridad Vial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 24px; margin: 32px 0; }
+        .gallery__item { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+        .gallery__item img { width: 100%; height: auto; display: block; cursor: pointer; transition: transform 0.2s; }
+        .gallery__item img:hover { transform: scale(1.02); }
+        .gallery__caption { padding: 16px; font-size: 14px; color: var(--text-light); }
+        .back-link { display: inline-block; margin-bottom: 24px; color: var(--primary); text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .brief-content { max-width: 800px; margin: 0 auto; }
+        .brief-content table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .brief-content th, .brief-content td { padding: 10px 12px; border: 1px solid #e5e7eb; text-align: right; }
+        .brief-content th { background: var(--primary); color: white; font-weight: 600; text-align: center; }
+        .brief-content td:first-child { text-align: center; font-weight: 600; }
+        .highlight-row { background: #fff3f3; font-weight: 700; }
+        .download-section { background: linear-gradient(135deg, var(--primary), var(--ods-17)); color: white; border-radius: var(--radius); padding: 40px; text-align: center; margin: 48px 0; }
+        .download-section h3 { margin-bottom: 12px; font-size: 1.5rem; }
+        .download-section p { opacity: 0.9; margin-bottom: 20px; }
+        .download-grid { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        @media (max-width: 768px) { .gallery { grid-template-columns: 1fr; } }
+
+        /* Lightbox */
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; cursor: pointer; }
+        .lightbox.active { display: flex; }
+        .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <nav class="nav container">
+        <div class="nav__logo">
+            <span class="nav__logo-icon">🔭</span>
+            <div>
+                <div class="nav__logo-title">Observatorio de Seguridad Vial</div>
+                <div class="nav__logo-sub">ANASEVI · Datos que salvan vidas</div>
+            </div>
+        </div>
+        <ul class="nav__links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#datos">Datos</a></li>
+            <li><a href="#infografias">Infografías</a></li>
+            <li><a href="#descargas">Descargas</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero" style="padding: 140px 0 60px;">
+    <div class="container">
+        <h1 class="hero__title">🏍️ Crisis de Motociclistas<br>en México</h1>
+        <p class="hero__subtitle">Análisis de microdatos de mortalidad vial INEGI 2015-2023.<br>La emergencia silenciosa que nadie está atendiendo.</p>
+        <div class="hero__badges">
+            <span class="ods-badge ods-3" title="ODS 3: Salud y bienestar">3</span>
+            <span class="ods-badge ods-5" title="ODS 5: Igualdad de género">5</span>
+            <span class="ods-badge ods-11" title="ODS 11: Ciudades sostenibles">11</span>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="datos">
+    <div class="container brief-content">
+        <a href="index.html" class="back-link">← Volver al Observatorio</a>
+        
+        <h2>Resumen Ejecutivo</h2>
+        <p>Entre 2015 y 2023, las muertes de motociclistas en México aumentaron un <strong>87%</strong>, pasando de 1,541 a 2,885 defunciones anuales. Esta es la única categoría de usuario vial con crecimiento sostenido. Mientras las muertes de peatones y ocupantes de vehículos disminuyen, los motociclistas mueren cada vez más.</p>
+
+        <h3>Datos Nacionales por Año</h3>
+        <table>
+            <thead>
+                <tr><th>Año</th><th>Tránsito Total</th><th>Motociclistas</th><th>Peatones</th><th>Vehículo</th><th>Ciclistas</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>2015</td><td>16,645</td><td>1,541</td><td>4,765</td><td>3,159</td><td>267</td></tr>
+                <tr><td>2016</td><td>16,761</td><td>1,844</td><td>4,559</td><td>3,211</td><td>280</td></tr>
+                <tr><td>2017</td><td>16,419</td><td>1,935</td><td>4,017</td><td>3,046</td><td>253</td></tr>
+                <tr><td>2018</td><td>16,035</td><td>1,890</td><td>3,753</td><td>2,656</td><td>220</td></tr>
+                <tr><td>2019</td><td>15,156</td><td>1,948</td><td>3,294</td><td>2,304</td><td>205</td></tr>
+                <tr><td>2020</td><td>14,020</td><td>1,986</td><td>2,642</td><td>1,992</td><td>177</td></tr>
+                <tr><td>2021</td><td>15,119</td><td>2,244</td><td>2,732</td><td>2,335</td><td>155</td></tr>
+                <tr><td>2022</td><td>16,414</td><td>2,481</td><td>2,844</td><td>2,254</td><td>158</td></tr>
+                <tr class="highlight-row"><td>2023</td><td>17,280</td><td>2,885</td><td>3,104</td><td>2,159</td><td>190</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Motociclistas: Perfil Demográfico</h3>
+        <table>
+            <thead>
+                <tr><th>Año</th><th>Total</th><th>Hombres</th><th>Mujeres</th><th>Jóvenes 15-29</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>2015</td><td>1,541</td><td>1,397</td><td>144</td><td>867</td></tr>
+                <tr><td>2016</td><td>1,844</td><td>1,654</td><td>190</td><td>1,013</td></tr>
+                <tr><td>2017</td><td>1,935</td><td>1,760</td><td>175</td><td>1,128</td></tr>
+                <tr><td>2018</td><td>1,890</td><td>1,704</td><td>186</td><td>1,040</td></tr>
+                <tr><td>2019</td><td>1,948</td><td>1,763</td><td>185</td><td>1,027</td></tr>
+                <tr><td>2020</td><td>1,986</td><td>1,789</td><td>197</td><td>1,082</td></tr>
+                <tr><td>2021</td><td>2,244</td><td>2,000</td><td>244</td><td>1,183</td></tr>
+                <tr><td>2022</td><td>2,481</td><td>2,205</td><td>276</td><td>1,268</td></tr>
+                <tr class="highlight-row"><td>2023</td><td>2,885</td><td>2,585</td><td>300</td><td>1,449</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Hallazgos Clave</h3>
+        <ul>
+            <li><strong>+87% de muertes</strong> en motociclistas entre 2015 y 2023</li>
+            <li><strong>50% son jóvenes</strong> de 15 a 29 años</li>
+            <li><strong>Mujeres: +108%</strong> de aumento (de 144 a 300 muertes)</li>
+            <li><strong>Jalisco, Guanajuato y Estado de México</strong> concentran la mayor mortalidad</li>
+            <li>Es la <strong>única categoría de usuario vial en crecimiento</strong> sostenido</li>
+            <li>México va en <strong>sentido contrario</strong> a la meta del Decenio de Acción</li>
+        </ul>
+
+        <p><em>Fuente: INEGI, Estadísticas de Defunciones Registradas 2015-2023. Análisis: Dr. Arturo Cervantes Trejo, ANASEVI.</em></p>
+    </div>
+</section>
+
+<section class="section section--light" id="infografias">
+    <div class="container">
+        <div class="section__header">
+            <span class="section__tag">📊 Visualizaciones</span>
+            <h2 class="section__title">Infografías y Gráficas</h2>
+            <p class="section__desc">Haz clic en cualquier imagen para ampliarla. Todas las gráficas son de libre uso con crédito a ANASEVI.</p>
+        </div>
+        
+        <div class="gallery">
+            <div class="gallery__item">
+                <img src="assets/01_tendencia_nacional_2015_2030.png" alt="Tendencia nacional de mortalidad vial 2015-2030" loading="lazy">
+                <div class="gallery__caption">Tendencia nacional de mortalidad vial con proyección a 2030</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/tendencia_tipo_usuario.png" alt="Tendencia por tipo de usuario vial" loading="lazy">
+                <div class="gallery__caption">Mortalidad por tipo de usuario vial — solo motociclistas crecen</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/02_causas_externas_comparativo.png" alt="Comparativo de causas externas de mortalidad" loading="lazy">
+                <div class="gallery__caption">Comparativo de causas externas de mortalidad</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/03_ranking_estatal_2023.png" alt="Ranking estatal de mortalidad vial 2023" loading="lazy">
+                <div class="gallery__caption">Ranking estatal de mortalidad vial 2023</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/asr_tendencia.png" alt="Tendencia de tasas ajustadas" loading="lazy">
+                <div class="gallery__caption">Tendencia de tasas ajustadas por edad (ASR)</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/asr_motos_estados_2023.png" alt="Tasas de mortalidad en motociclistas por estado 2023" loading="lazy">
+                <div class="gallery__caption">Tasas de mortalidad en motociclistas por estado 2023</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/asr_estados_2023.png" alt="Tasas ajustadas por estado 2023" loading="lazy">
+                <div class="gallery__caption">Tasas ajustadas de mortalidad vial por estado 2023</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/04_defunciones_proyeccion_2030.png" alt="Proyección de defunciones a 2030" loading="lazy">
+                <div class="gallery__caption">Proyección de defunciones viales a 2030</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/motociclistas_edad_2023.png" alt="Distribución por edad de motociclistas fallecidos 2023" loading="lazy">
+                <div class="gallery__caption">Distribución por edad — motociclistas fallecidos 2023</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/motociclistas_edad_2021.png" alt="Distribución por edad de motociclistas fallecidos 2021" loading="lazy">
+                <div class="gallery__caption">Distribución por edad — motociclistas fallecidos 2021</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/comparativo_internacional.png" alt="Comparativo internacional de mortalidad vial" loading="lazy">
+                <div class="gallery__caption">Comparativo internacional de mortalidad vial</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/tendencia_causas_externas.png" alt="Tendencia de causas externas" loading="lazy">
+                <div class="gallery__caption">Tendencia de causas externas de mortalidad</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/08_tres_crisis_causas_externas.png" alt="Tres crisis de causas externas" loading="lazy">
+                <div class="gallery__caption">Las tres crisis de causas externas en México</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/05_homicidios_tendencia_2015_2030.png" alt="Tendencia de homicidios 2015-2030" loading="lazy">
+                <div class="gallery__caption">Contexto: tendencia de homicidios 2015-2030</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/06_homicidios_comparativo_internacional.png" alt="Homicidios comparativo internacional" loading="lazy">
+                <div class="gallery__caption">Contexto: comparativo internacional de homicidios</div>
+            </div>
+            <div class="gallery__item">
+                <img src="assets/07_homicidios_ranking_estatal.png" alt="Homicidios ranking estatal" loading="lazy">
+                <div class="gallery__caption">Contexto: ranking estatal de homicidios</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="descargas">
+    <div class="container">
+        <div class="download-section">
+            <h3>📥 Descargas</h3>
+            <p>Descarga el análisis completo y las infografías para tu investigación, presentación o publicación.</p>
+            <div class="download-grid">
+                <a href="assets/policy-brief-motociclistas-2024.pdf" class="btn btn--large btn--white" download>📄 Policy Brief (PDF)</a>
+                <a href="assets/infografias-motociclistas.zip" class="btn btn--large btn--white" download>📊 Todas las infografías (ZIP)</a>
+            </div>
+            <p style="margin-top: 16px; font-size: 13px; opacity: 0.7;">Libre uso con crédito: Dr. Arturo Cervantes Trejo / Observatorio de Seguridad Vial / ANASEVI</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__content">
+            <p>© 2026 Observatorio de Seguridad Vial · ANASEVI</p>
+            <p>Datos abiertos · Evidencia para políticas públicas · Agenda 2030</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <img src="" alt="" id="lightboxImg">
+</div>
+
+<script>
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+document.querySelectorAll('.gallery__item img').forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+    });
+});
+lightbox.addEventListener('click', () => lightbox.classList.remove('active'));
+</script>
+</body>
+</html>
