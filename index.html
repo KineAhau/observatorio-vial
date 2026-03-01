@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observatorio de Seguridad Vial | ANASEVI</title>
+    <meta name="description" content="Monitoreo independiente de datos, análisis y policy briefs sobre seguridad vial en México. Datos que salvan vidas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <nav class="nav container">
+        <div class="nav__logo">
+            <span class="nav__logo-icon">🔭</span>
+            <div>
+                <div class="nav__logo-title">Observatorio de Seguridad Vial</div>
+                <div class="nav__logo-sub">ANASEVI · Datos que salvan vidas</div>
+            </div>
+        </div>
+        <ul class="nav__links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#motociclistas">Motociclistas</a></li>
+            <li><a href="#dashboards">Dashboards</a></li>
+            <li><a href="#reportes">Reportes</a></li>
+            <li><a href="#suscribete" class="btn btn--small">Suscríbete</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Menú">☰</button>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+    <div class="container">
+        <div class="hero__ods">
+            <img src="assets/ods-wheel.svg" alt="Rueda ODS Agenda 2030" class="hero__ods-wheel">
+        </div>
+        <h1 class="hero__title">Observatorio de<br>Seguridad Vial</h1>
+        <p class="hero__subtitle">Monitoreo independiente de datos, análisis y evidencia para políticas públicas que salvan vidas en México.</p>
+        <div class="hero__badges">
+            <span class="ods-badge ods-1" title="ODS 1: Fin de la pobreza">1</span>
+            <span class="ods-badge ods-3" title="ODS 3: Salud y bienestar">3</span>
+            <span class="ods-badge ods-5" title="ODS 5: Igualdad de género">5</span>
+            <span class="ods-badge ods-11" title="ODS 11: Ciudades sostenibles">11</span>
+            <span class="ods-badge ods-16" title="ODS 16: Paz, justicia e instituciones">16</span>
+            <span class="ods-badge ods-17" title="ODS 17: Alianzas para los objetivos">17</span>
+        </div>
+
+        <!-- COUNTERS -->
+        <div class="counters">
+            <div class="counter counter--countdown">
+                <div class="counter__icon">⏱️</div>
+                <div class="counter__number" id="daysLeft">--</div>
+                <div class="counter__label">días para que termine el<br><strong>2° Decenio de Acción por la Seguridad Vial</strong></div>
+                <div class="counter__sub">Meta: reducir 50% las muertes viales para 2030</div>
+            </div>
+            <div class="counter counter--deaths">
+                <div class="counter__icon">💀</div>
+                <div class="counter__number" id="excessDeaths">--</div>
+                <div class="counter__label">muertes excedentes acumuladas<br><strong>por no cumplir la meta de reducción</strong></div>
+                <div class="counter__sub">Dos decenios de promesas incumplidas</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MOTOCICLISTAS -->
+<section class="section section--dark" id="motociclistas">
+    <div class="container">
+        <div class="section__header">
+            <span class="section__tag">🏍️ Tema de lanzamiento</span>
+            <h2 class="section__title">Crisis de Motociclistas en México</h2>
+            <p class="section__desc">De 1,541 muertes en 2015 a 2,885 en 2023. Un aumento del 87% en 8 años. La emergencia que nadie está atendiendo.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-card__number">2,885</div>
+                <div class="stat-card__label">Motociclistas muertos en 2023</div>
+            </div>
+            <div class="stat-card stat-card--alert">
+                <div class="stat-card__number">+87%</div>
+                <div class="stat-card__label">Aumento 2015-2023</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__number">1,449</div>
+                <div class="stat-card__label">Jóvenes 15-29 años (50%)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__number">300</div>
+                <div class="stat-card__label">Mujeres fallecidas en 2023</div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="charts-grid">
+            <div class="chart-container">
+                <h3>Tendencia de mortalidad en motociclistas (2015-2023)</h3>
+                <canvas id="chartTendencia"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Mortalidad por tipo de usuario vial (2023)</h3>
+                <canvas id="chartTipoUsuario"></canvas>
+            </div>
+            <div class="chart-container chart-container--wide">
+                <h3>Top 10 estados — Mortalidad vial 2023</h3>
+                <canvas id="chartEstados"></canvas>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>📄 Descarga el Policy Brief completo</h3>
+            <p>Análisis de microdatos INEGI 2015-2023 con datos nacionales, estatales, por género y grupo de edad.</p>
+            <a href="assets/policy-brief-motociclistas-2024.pdf" class="btn btn--large" download>Descargar PDF</a>
+        </div>
+    </div>
+</section>
+
+<!-- DASHBOARDS -->
+<section class="section" id="dashboards">
+    <div class="container">
+        <div class="section__header">
+            <span class="section__tag">📊 Datos interactivos</span>
+            <h2 class="section__title">Dashboards</h2>
+            <p class="section__desc">Explora los datos de mortalidad y morbilidad vial en México. Filtra por estado, año y tipo de usuario.</p>
+        </div>
+        <div class="dashboard-preview">
+            <p class="dashboard-preview__coming">🚧 Dashboard interactivo completo — Próximamente</p>
+            <p>Mientras tanto, explora los datos del reporte de motociclistas arriba.</p>
+        </div>
+    </div>
+</section>
+
+<!-- REPORTES -->
+<section class="section section--light" id="reportes">
+    <div class="container">
+        <div class="section__header">
+            <span class="section__tag">📑 Publicaciones</span>
+            <h2 class="section__title">Reportes y Policy Briefs</h2>
+        </div>
+        <div class="reports-grid">
+            <div class="report-card">
+                <div class="report-card__badge">NUEVO</div>
+                <h3>Crisis de Motociclistas en México</h3>
+                <p>Análisis de microdatos de mortalidad vial INEGI 2015-2023. Tendencias, proyecciones y recomendaciones de política pública.</p>
+                <div class="report-card__meta">Marzo 2026 · Dr. Arturo Cervantes Trejo</div>
+                <a href="assets/policy-brief-motociclistas-2024.pdf" class="btn" download>Descargar PDF</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SUSCRIPCIÓN -->
+<section class="section section--cta" id="suscribete">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title" style="color: white;">Mantente informado</h2>
+            <p class="section__desc" style="color: rgba(255,255,255,0.9);">Recibe análisis, datos y policy briefs directamente en tu correo. Sin spam, solo evidencia.</p>
+        </div>
+        <form class="subscribe-form" id="subscribeForm">
+            <input type="text" placeholder="Tu nombre" required class="subscribe-form__input" id="subName">
+            <input type="email" placeholder="Tu correo electrónico" required class="subscribe-form__input" id="subEmail">
+            <input type="text" placeholder="Organización (opcional)" class="subscribe-form__input" id="subOrg">
+            <button type="submit" class="btn btn--large btn--white">Suscribirme al Observatorio</button>
+        </form>
+        <p class="subscribe-note">Tus datos están protegidos. Puedes cancelar en cualquier momento.</p>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="acerca">
+    <div class="container">
+        <div class="about-grid">
+            <div>
+                <h2>Acerca del Observatorio</h2>
+                <p>El Observatorio de Seguridad Vial es una iniciativa independiente de monitoreo y análisis de datos sobre mortalidad y morbilidad vial en México, con enfoque en evidencia para políticas públicas.</p>
+                <p><strong>Dr. Arturo Cervantes Trejo</strong><br>
+                Académico, Universidad Anáhuac<br>
+                Investigador independiente<br>
+                Presidente, ANASEVI</p>
+                <p>Especialista en epidemiología de lesiones, seguridad vial, economía de la salud y prevención de violencia. Harvard T.H. Chan School of Public Health.</p>
+            </div>
+            <div class="about-ods">
+                <h3>Objetivos de Desarrollo Sostenible</h3>
+                <div class="ods-grid">
+                    <div class="ods-card ods-1"><strong>ODS 1</strong><br>Fin de la pobreza<br><small>Movilidad integrada</small></div>
+                    <div class="ods-card ods-3"><strong>ODS 3</strong><br>Salud y bienestar<br><small>Mortalidad vial</small></div>
+                    <div class="ods-card ods-5"><strong>ODS 5</strong><br>Igualdad de género<br><small>Transporte con equidad</small></div>
+                    <div class="ods-card ods-11"><strong>ODS 11</strong><br>Ciudades sostenibles<br><small>Movilidad segura</small></div>
+                    <div class="ods-card ods-16"><strong>ODS 16</strong><br>Paz y justicia<br><small>No violencia en transporte</small></div>
+                    <div class="ods-card ods-17"><strong>ODS 17</strong><br>Alianzas<br><small>Cooperación internacional</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__content">
+            <p>© 2026 Observatorio de Seguridad Vial · ANASEVI</p>
+            <p>Datos abiertos · Evidencia para políticas públicas · Agenda 2030</p>
+        </div>
+    </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

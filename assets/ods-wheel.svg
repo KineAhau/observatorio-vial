@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- ODS Wheel - simplified representation -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#ddd" stroke-width="1"/>
+  <!-- 17 colored segments -->
+  <g transform="translate(100,100)">
+    <path d="M0,-90 A90,90 0 0,1 30.8,-84.6 L0,0Z" fill="#E5243B"/>
+    <path d="M30.8,-84.6 A90,90 0 0,1 57.6,-69.3 L0,0Z" fill="#DDA63A"/>
+    <path d="M57.6,-69.3 A90,90 0 0,1 77.9,-45.9 L0,0Z" fill="#4C9F38"/>
+    <path d="M77.9,-45.9 A90,90 0 0,1 89.1,-17.5 L0,0Z" fill="#C5192D"/>
+    <path d="M89.1,-17.5 A90,90 0 0,1 89.1,17.5 L0,0Z" fill="#FF3A21"/>
+    <path d="M89.1,17.5 A90,90 0 0,1 77.9,45.9 L0,0Z" fill="#26BDE2"/>
+    <path d="M77.9,45.9 A90,90 0 0,1 57.6,69.3 L0,0Z" fill="#FCC30B"/>
+    <path d="M57.6,69.3 A90,90 0 0,1 30.8,84.6 L0,0Z" fill="#A21942"/>
+    <path d="M30.8,84.6 A90,90 0 0,1 0,90 L0,0Z" fill="#FD6925"/>
+    <path d="M0,90 A90,90 0 0,1 -30.8,84.6 L0,0Z" fill="#DD1367"/>
+    <path d="M-30.8,84.6 A90,90 0 0,1 -57.6,69.3 L0,0Z" fill="#FD9D24"/>
+    <path d="M-57.6,69.3 A90,90 0 0,1 -77.9,45.9 L0,0Z" fill="#BF8B2E"/>
+    <path d="M-77.9,45.9 A90,90 0 0,1 -89.1,17.5 L0,0Z" fill="#3F7E44"/>
+    <path d="M-89.1,17.5 A90,90 0 0,1 -89.1,-17.5 L0,0Z" fill="#0A97D9"/>
+    <path d="M-89.1,-17.5 A90,90 0 0,1 -77.9,-45.9 L0,0Z" fill="#56C02B"/>
+    <path d="M-77.9,-45.9 A90,90 0 0,1 -57.6,-69.3 L0,0Z" fill="#00689D"/>
+    <path d="M-57.6,-69.3 A90,90 0 0,1 -30.8,-84.6 L0,0Z" fill="#19486A"/>
+    <path d="M-30.8,-84.6 A90,90 0 0,1 0,-90 L0,0Z" fill="#19486A"/>
+    <!-- Center circle -->
+    <circle cx="0" cy="0" r="35" fill="white"/>
+    <text x="0" y="-4" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#333">AGENDA</text>
+    <text x="0" y="8" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="900" fill="#333">2030</text>
+  </g>
+</svg>
