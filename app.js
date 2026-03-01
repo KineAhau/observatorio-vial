@@ -191,9 +191,14 @@ function initCharts() {
                 }]
             },
             options: {
-                ...darkChartOptions,
+                responsive: true,
+                maintainAspectRatio: false,
                 indexAxis: 'y',
-                plugins: { legend: { display: false } }
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { ticks: { color: 'rgba(255,255,255,0.6)' }, grid: { color: chartColors.grid } },
+                    y: { ticks: { color: 'rgba(255,255,255,0.6)', font: { size: 13 } }, grid: { color: chartColors.grid } }
+                }
             }
         });
     }
