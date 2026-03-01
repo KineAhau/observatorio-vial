@@ -215,12 +215,19 @@ function initSubscribe() {
         const email = document.getElementById('subEmail').value;
         const org = document.getElementById('subOrg').value;
         
-        // For now, mailto fallback — will be replaced with Resend API
         const subject = encodeURIComponent('Suscripción al Observatorio de Seguridad Vial');
-        const body = encodeURIComponent(`Nueva suscripción:\nNombre: ${name}\nEmail: ${email}\nOrganización: ${org}`);
+        const body = encodeURIComponent(
+            `Hola, me gustaría suscribirme al Observatorio de Seguridad Vial de ANASEVI.\n\n` +
+            `Nombre: ${name}\n` +
+            `Correo: ${email}\n` +
+            `Organización: ${org || 'No especificada'}\n\n` +
+            `Quedo atento/a para recibir reportes, policy briefs y actualizaciones.\n\nSaludos.`
+        );
+        
+        // Open email client with pre-filled message
         window.location.href = `mailto:enikuaha@gmail.com?subject=${subject}&body=${body}`;
         
-        alert('¡Gracias por suscribirte! Te confirmaremos tu registro pronto.');
+        alert('¡Gracias! Se abrirá tu correo electrónico para confirmar tu suscripción. Si no se abre, escríbenos directamente a enikuaha@gmail.com');
         form.reset();
     });
 }
