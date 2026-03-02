@@ -168,36 +168,53 @@ function initCharts() {
     // Top 10 estados
     const ctx3 = document.getElementById('chartEstados');
     if (ctx3) {
+        // Set explicit height for horizontal bar chart
+        ctx3.parentElement.style.minHeight = '420px';
         new Chart(ctx3, {
             type: 'bar',
             data: {
-                labels: ['Jalisco', 'Guanajuato', 'México', 'Chihuahua', 'Michoacán', 'CDMX', 'Oaxaca', 'Puebla', 'Chiapas', 'SLP'],
+                labels: ['Jalisco (1,341)', 'Guanajuato (1,183)', 'Edo. México (866)', 'Chihuahua (838)', 'Michoacán (825)', 'CDMX (816)', 'Oaxaca (723)', 'Puebla (697)', 'Chiapas (669)', 'San Luis Potosí (620)'],
                 datasets: [{
                     label: 'Defunciones por tránsito 2023',
                     data: [1341, 1183, 866, 838, 825, 816, 723, 697, 669, 620],
                     backgroundColor: [
-                        chartColors.accent,
-                        chartColors.accent + 'DD',
-                        chartColors.accent + 'BB',
-                        chartColors.accent + '99',
-                        chartColors.accent + '88',
-                        chartColors.accent + '77',
-                        chartColors.accent + '66',
-                        chartColors.accent + '55',
-                        chartColors.accent + '44',
-                        chartColors.accent + '33'
+                        '#E5243B',
+                        '#D93245',
+                        '#CD404F',
+                        '#C14E59',
+                        '#B55C63',
+                        '#A96A6D',
+                        '#9D7877',
+                        '#918681',
+                        '#85948B',
+                        '#79A295'
                     ],
-                    borderRadius: 6
+                    borderRadius: 6,
+                    barThickness: 28
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 indexAxis: 'y',
-                plugins: { legend: { display: false } },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) { return ctx.raw.toLocaleString('es-MX') + ' defunciones'; }
+                        }
+                    }
+                },
                 scales: {
-                    x: { ticks: { color: 'rgba(255,255,255,0.6)' }, grid: { color: chartColors.grid } },
-                    y: { ticks: { color: 'rgba(255,255,255,0.6)', font: { size: 13 } }, grid: { color: chartColors.grid } }
+                    x: {
+                        ticks: { color: 'rgba(255,255,255,0.6)' },
+                        grid: { color: chartColors.grid },
+                        title: { display: true, text: 'Defunciones', color: 'rgba(255,255,255,0.5)', font: { size: 11 } }
+                    },
+                    y: {
+                        ticks: { color: 'rgba(255,255,255,0.8)', font: { size: 12, weight: '500' } },
+                        grid: { display: false }
+                    }
                 }
             }
         });
