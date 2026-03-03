@@ -168,12 +168,13 @@ function initCharts() {
     // Top 10 estados
     const ctx3 = document.getElementById('chartEstados');
     if (ctx3) {
-        // Set explicit height for horizontal bar chart
-        ctx3.parentElement.style.minHeight = '420px';
+        // Set explicit height for horizontal bar chart — enough for 10 bars
+        ctx3.parentElement.style.minHeight = '500px';
+        ctx3.parentElement.style.height = '500px';
         new Chart(ctx3, {
             type: 'bar',
             data: {
-                labels: ['Jalisco (1,341)', 'Guanajuato (1,183)', 'Edo. México (866)', 'Chihuahua (838)', 'Michoacán (825)', 'CDMX (816)', 'Oaxaca (723)', 'Puebla (697)', 'Chiapas (669)', 'San Luis Potosí (620)'],
+                labels: ['Jalisco', 'Guanajuato', 'Edo. México', 'Chihuahua', 'Michoacán', 'CDMX', 'Oaxaca', 'Puebla', 'Chiapas', 'San Luis Potosí'],
                 datasets: [{
                     label: 'Defunciones por tránsito 2023',
                     data: [1341, 1183, 866, 838, 825, 816, 723, 697, 669, 620],
@@ -189,14 +190,17 @@ function initCharts() {
                         '#85948B',
                         '#79A295'
                     ],
-                    borderRadius: 6,
-                    barThickness: 28
+                    borderRadius: 4,
+                    maxBarThickness: 32
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 indexAxis: 'y',
+                layout: {
+                    padding: { right: 20 }
+                },
                 plugins: {
                     legend: { display: false },
                     tooltip: {
@@ -207,13 +211,21 @@ function initCharts() {
                 },
                 scales: {
                     x: {
+                        beginAtZero: true,
                         ticks: { color: 'rgba(255,255,255,0.6)' },
                         grid: { color: chartColors.grid },
                         title: { display: true, text: 'Defunciones', color: 'rgba(255,255,255,0.5)', font: { size: 11 } }
                     },
                     y: {
-                        ticks: { color: 'rgba(255,255,255,0.8)', font: { size: 12, weight: '500' } },
-                        grid: { display: false }
+                        ticks: {
+                            color: 'rgba(255,255,255,0.85)',
+                            font: { size: 13, weight: '600' },
+                            crossAlign: 'far'
+                        },
+                        grid: { display: false },
+                        afterFit: function(scale) {
+                            scale.width = 130; // Fixed width for state names
+                        }
                     }
                 }
             }
