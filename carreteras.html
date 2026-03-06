@@ -114,15 +114,15 @@
 
         <!-- CHARTS -->
         <div class="charts-grid">
-            <div class="chart-container">
+            <div class="chart-container" style="max-height:none;overflow:visible;">
                 <h3>🌍 Comparativo internacional: cambio en muertes viales 2014-2024</h3>
-                <div style="position:relative;height:320px;max-height:320px;">
+                <div style="position:relative;width:100%;height:250px;">
                     <canvas id="chartComparativo"></canvas>
                 </div>
             </div>
-            <div class="chart-container">
+            <div class="chart-container" style="max-height:none;overflow:visible;">
                 <h3>📈 Tendencia de muertes viales en México (2014-2024)</h3>
-                <div style="position:relative;height:320px;max-height:320px;">
+                <div style="position:relative;width:100%;height:280px;">
                     <canvas id="chartTendencia"></canvas>
                 </div>
             </div>
@@ -287,60 +287,56 @@
 </footer>
 
 <script>
-// Comparativo internacional - Bar chart
-const ctxComp = document.getElementById('chartComparativo').getContext('2d');
+// Comparativo internacional - HORIZONTAL bar chart (compact)
+const ctxComp = document.getElementById('chartComparativo');
 new Chart(ctxComp, {
     type: 'bar',
     data: {
         labels: ['Lituania', 'Corea del Sur', 'Noruega', 'México'],
         datasets: [{
-            label: 'Cambio en muertes viales 2014-2024 (%)',
+            label: 'Cambio %',
             data: [-54, -47, -40, 4.8],
-            backgroundColor: [
-                '#4C9F38', '#4C9F38', '#4C9F38', '#E5243B'
-            ],
+            backgroundColor: ['#4C9F38','#4C9F38','#4C9F38','#E5243B'],
             borderRadius: 6,
-            borderSkipped: false
+            borderSkipped: false,
+            barThickness: 32
         }]
     },
     options: {
+        indexAxis: 'y',
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
             legend: { display: false },
             tooltip: {
                 callbacks: {
-                    label: function(ctx) {
-                        const v = ctx.raw;
-                        return v > 0 ? '+' + v + '%' : v + '%';
-                    }
+                    label: ctx => (ctx.raw > 0 ? '+' : '') + ctx.raw + '%'
                 }
             }
         },
         scales: {
-            y: {
+            x: {
                 grid: { color: 'rgba(255,255,255,0.08)' },
                 ticks: { color: 'rgba(255,255,255,0.6)', callback: v => v + '%' },
-                suggestedMin: -60,
-                suggestedMax: 10
+                min: -60, max: 15
             },
-            x: {
+            y: {
                 grid: { display: false },
-                ticks: { color: 'rgba(255,255,255,0.8)', font: { weight: '600' } }
+                ticks: { color: 'rgba(255,255,255,0.9)', font: { size: 14, weight: '600' } }
             }
         }
     }
 });
 
 // Tendencia muertes viales México - Line chart
-const ctxTend = document.getElementById('chartTendencia').getContext('2d');
+const ctxTend = document.getElementById('chartTendencia');
 new Chart(ctxTend, {
     type: 'line',
     data: {
         labels: ['2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024'],
         datasets: [{
             label: 'Muertes viales',
-            data: [15886, 16039, 16185, 15854, 16120, 15954, 13764, 16128, 16421, 16772, 16654],
+            data: [15886,16039,16185,15854,16120,15954,13764,16128,16421,16772,16654],
             borderColor: '#E5243B',
             backgroundColor: 'rgba(229,36,59,0.1)',
             fill: true,
@@ -358,13 +354,8 @@ new Chart(ctxTend, {
             legend: { display: false },
             tooltip: {
                 callbacks: {
-                    label: function(ctx) {
-                        return ctx.raw.toLocaleString() + ' muertes';
-                    },
-                    afterLabel: function(ctx) {
-                        if (ctx.dataIndex === 6) return '(Baja por COVID-19)';
-                        return '';
-                    }
+                    label: ctx => ctx.raw.toLocaleString() + ' muertes',
+                    afterLabel: ctx => ctx.dataIndex === 6 ? '(Baja por COVID-19)' : ''
                 }
             }
         },
@@ -372,8 +363,7 @@ new Chart(ctxTend, {
             y: {
                 grid: { color: 'rgba(255,255,255,0.08)' },
                 ticks: { color: 'rgba(255,255,255,0.6)', callback: v => v.toLocaleString() },
-                suggestedMin: 13000,
-                suggestedMax: 17500
+                min: 13000, max: 17500
             },
             x: {
                 grid: { display: false },
