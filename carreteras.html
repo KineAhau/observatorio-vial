@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$397 mil millones para carreteras: ¿y la seguridad vial? | Observatorio de Seguridad Vial</title>
+    <meta name="description" content="Análisis del programa de inversión carretera 2026 y sus implicaciones para la seguridad vial en México. ANASEVI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .article-content { max-width: 800px; margin: 0 auto; }
+        .article-content h2 { font-size: 1.5rem; margin: 32px 0 16px; color: var(--primary-dark); }
+        .article-content h3 { font-size: 1.2rem; margin: 28px 0 12px; color: var(--primary); }
+        .article-content p { font-size: 16px; line-height: 1.8; margin-bottom: 16px; color: var(--text); }
+        .article-content ul, .article-content ol { margin: 16px 0; padding-left: 24px; }
+        .article-content li { font-size: 16px; line-height: 1.8; margin-bottom: 8px; }
+        .article-content blockquote { border-left: 4px solid var(--accent); padding: 16px 24px; margin: 24px 0; background: #fff5f5; border-radius: 0 8px 8px 0; }
+        .article-content blockquote p { color: var(--accent); font-weight: 600; margin: 0; }
+        .article-content .author-bio { font-size: 14px; color: var(--text-light); font-style: italic; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: var(--primary); text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .download-section { background: linear-gradient(135deg, var(--primary), var(--ods-17)); color: white; border-radius: var(--radius); padding: 40px; text-align: center; margin: 48px 0; }
+        .download-section h3 { margin-bottom: 12px; font-size: 1.5rem; }
+        .download-section p { opacity: 0.9; margin-bottom: 20px; }
+        .proposals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .proposal-card { background: white; border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow); text-align: center; }
+        .proposal-card__icon { font-size: 48px; margin-bottom: 16px; }
+        .proposal-card__number { display: inline-block; background: var(--accent); color: white; width: 32px; height: 32px; border-radius: 50%; font-weight: 700; font-size: 16px; line-height: 32px; margin-bottom: 12px; }
+        .proposal-card h4 { font-size: 1rem; margin-bottom: 8px; color: var(--primary-dark); }
+        .proposal-card p { font-size: 14px; color: var(--text-light); }
+        .programa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 32px 0; }
+        .programa-item { background: white; border-radius: var(--radius); padding: 24px; text-align: center; box-shadow: var(--shadow); }
+        .programa-item__number { font-size: 2rem; font-weight: 900; color: var(--primary); }
+        .programa-item__label { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+        @media (max-width: 768px) {
+            .proposals-grid { grid-template-columns: 1fr; }
+            .programa-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <nav class="nav container">
+        <div class="nav__logo">
+            <span class="nav__logo-icon">🔭</span>
+            <div>
+                <div class="nav__logo-title">Observatorio de Seguridad Vial</div>
+                <div class="nav__logo-sub">ANASEVI · Datos que salvan vidas</div>
+            </div>
+        </div>
+        <ul class="nav__links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="motociclistas.html">Motociclistas</a></li>
+            <li><a href="#datos">Datos</a></li>
+            <li><a href="#propuestas">Propuestas</a></li>
+            <li><a href="#articulo">Artículo</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Menú">☰</button>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="padding: 140px 0 80px;">
+    <div class="container">
+        <h1 class="hero__title">🛣️ $397 mil millones para carreteras:<br>¿y la seguridad vial?</h1>
+        <p class="hero__subtitle">Análisis del programa de inversión carretera anunciado el 4 de marzo de 2026.<br>La inversión más ambiciosa de la historia — pero ¿salvará vidas?</p>
+        <div class="hero__badges">
+            <span class="ods-badge ods-3" title="ODS 3: Salud y bienestar">3</span>
+            <span class="ods-badge ods-11" title="ODS 11: Ciudades sostenibles">11</span>
+            <span class="ods-badge ods-16" title="ODS 16: Paz, justicia e instituciones">16</span>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="section section--dark" id="datos">
+    <div class="container">
+        <div class="section__header">
+            <span class="section__tag">📊 La crisis en números</span>
+            <h2 class="section__title">La realidad vial de México</h2>
+            <p class="section__desc">Mientras celebramos kilómetros nuevos, las cifras cuentan otra historia.</p>
+        </div>
+
+        <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="stat-card stat-card--alert">
+                <div class="stat-card__number">45</div>
+                <div class="stat-card__label">muertes diarias en siniestros viales</div>
+            </div>
+            <div class="stat-card stat-card--alert">
+                <div class="stat-card__number">16,654</div>
+                <div class="stat-card__label">muertes al año (2024)</div>
+            </div>
+            <div class="stat-card stat-card--alert">
+                <div class="stat-card__number">+4.8%</div>
+                <div class="stat-card__label">aumento 2014-2024</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__number">2°</div>
+                <div class="stat-card__label">lugar en América en muertes viales</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__number">$397,046</div>
+                <div class="stat-card__label">mdp inversión anunciada</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__number">5,000</div>
+                <div class="stat-card__label">km de carreteras</div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="charts-grid">
+            <div class="chart-container">
+                <h3>🌍 Comparativo internacional: cambio en muertes viales 2014-2024</h3>
+                <canvas id="chartComparativo" height="300"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>📈 Tendencia de muertes viales en México (2014-2024)</h3>
+                <canvas id="chartTendencia" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROGRAMA CARRETERO -->
+<section class="section" id="programa">
+    <div class="container">
+        <div class="section__header">
+            <span class="section__tag">🏗️ El programa carretero</span>
+            <h2 class="section__title">¿Qué se anunció el 4 de marzo de 2026?</h2>
+            <p class="section__desc">Un programa de inversión público-privada para infraestructura carretera sin precedentes.</p>
+        </div>
+
+        <div class="programa-grid">
+            <div class="programa-item">
+                <div class="programa-item__number">$397,046</div>
+                <div class="programa-item__label">mdp inversión total</div>
+            </div>
+            <div class="programa-item">
+                <div class="programa-item__number">18</div>
+                <div class="programa-item__label">proyectos Banobras<br>(11 CMRO + 7 inversión mixta)</div>
+            </div>
+            <div class="programa-item">
+                <div class="programa-item__number">5,000</div>
+                <div class="programa-item__label">km en 11 estados</div>
+            </div>
+            <div class="programa-item">
+                <div class="programa-item__number">21</div>
+                <div class="programa-item__label">puentes</div>
+            </div>
+            <div class="programa-item">
+                <div class="programa-item__number">177,000</div>
+                <div class="programa-item__label">empleos directos</div>
+            </div>
+            <div class="programa-item">
+                <div class="programa-item__number">142,000</div>
+                <div class="programa-item__label">empleos indirectos</div>
+            </div>
+        </div>
+
+        <p style="text-align: center; font-size: 13px; color: var(--text-light); margin-top: 16px;">Fuente: Conferencia matutina 4 de marzo de 2026 · El Economista</p>
+    </div>
+</section>
+
+<!-- PROPUESTAS ANASEVI -->
+<section class="section section--light" id="propuestas">
+    <div class="container">
+        <div class="section__header">
+            <span class="section__tag">✅ Propuestas</span>
+            <h2 class="section__title">Lo que ANASEVI propone</h2>
+            <p class="section__desc">Cuatro medidas para que esta inversión histórica también salve vidas.</p>
+        </div>
+
+        <div class="proposals-grid">
+            <div class="proposal-card">
+                <div class="proposal-card__icon">🔍</div>
+                <div class="proposal-card__number">1</div>
+                <h4>Auditorías de seguridad vial obligatorias</h4>
+                <p>En los 18 proyectos de Banobras y en todos los tramos de la SICT, en diseño, construcción y operación.</p>
+            </div>
+            <div class="proposal-card">
+                <div class="proposal-card__icon">📊</div>
+                <div class="proposal-card__number">2</div>
+                <h4>Indicadores de siniestralidad</h4>
+                <p>Como parte de los estándares de desempeño en los contratos CMRO e inversión mixta.</p>
+            </div>
+            <div class="proposal-card">
+                <div class="proposal-card__icon">🛡️</div>
+                <div class="proposal-card__number">3</div>
+                <h4>Diseño con enfoque de Sistema Seguro</h4>
+                <p>Barreras centrales, señalización inteligente, reducción de velocidad en zonas de riesgo y protección de usuarios vulnerables.</p>
+            </div>
+            <div class="proposal-card">
+                <div class="proposal-card__icon">📄</div>
+                <div class="proposal-card__number">4</div>
+                <h4>Transparencia</h4>
+                <p>Que la SICT y Banobras publiquen los estudios de seguridad vial de cada proyecto como condición para su aprobación.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ARTÍCULO COMPLETO -->
+<section class="section" id="articulo">
+    <div class="container article-content">
+        <a href="index.html" class="back-link">← Volver al Observatorio</a>
+
+        <h2>$397 mil millones para carreteras: ¿y la seguridad vial?</h2>
+        <p><strong>Por Dr. Arturo Cervantes Trejo | ANASEVI</strong></p>
+
+        <p>Ayer, en la conferencia matutina, la presidenta Claudia Sheinbaum presentó lo que calificó como el programa de infraestructura carretera "más ambicioso" de la historia: una inversión de $397,046 millones de pesos para intervenir casi 5,000 kilómetros de autopistas y carreteras, más 21 puentes.</p>
+
+        <p>El anuncio es impresionante. Los números son grandes. La visión de conectividad es ambiciosa.</p>
+
+        <p>Pero hay una pregunta que nadie hizo: <strong>¿cuánto de esa inversión va a salvar vidas?</strong></p>
+
+        <h3>La otra cifra que nadie mencionó</h3>
+        <p>Mientras celebramos kilómetros nuevos, 45 personas mueren cada día en siniestros viales en México. Son 16,654 al año, según el <em>Road Safety Annual Report 2025</em> del International Transport Forum. Somos el segundo país de América con más muertes en carreteras, solo detrás de Estados Unidos.</p>
+
+        <p>Y la tendencia no mejora. Entre 2014 y 2024, las muertes viales en México aumentaron 4.8%. En el mismo período, Noruega las redujo 40%, Corea 47% y Lituania 54%.</p>
+
+        <blockquote><p>La diferencia no es presupuesto. Es enfoque.</p></blockquote>
+
+        <h3>Más kilómetros, ¿más riesgo?</h3>
+        <p>El ITF lo documenta con claridad: más de la mitad de las muertes viales en la mayoría de los países ocurren en carreteras rurales. En México, eso se traduce en autopistas federales de alta velocidad con ausencia de barreras centrales, señalización deficiente, iluminación limitada y accesos improvisados a comunidades.</p>
+
+        <p>Construir más kilómetros sin diseño seguro no es progreso. Es multiplicar la exposición al riesgo.</p>
+
+        <p>Los países que han logrado reducir dramáticamente sus muertes viales no construyeron más carreteras: construyeron carreteras más seguras. Implementaron auditorías de seguridad vial obligatorias, redujeron velocidades en zonas críticas a 30 km/h, instalaron barreras centrales, automatizaron la fiscalización y aplicaron el enfoque de Sistema Seguro.</p>
+
+        <h3>La ley ya existe. Falta cumplirla.</h3>
+        <p>México cuenta con la Ley General de Movilidad y Seguridad Vial desde mayo de 2022. Esta ley establece que las auditorías de seguridad vial deben ser parte integral de todo proyecto de infraestructura vial.</p>
+
+        <p>La pregunta es directa: ¿los 18 proyectos de Banobras y los tramos de la SICT incluyen auditorías de seguridad vial en su diseño, construcción y operación? ¿Los estándares de desempeño del modelo CMRO incorporan indicadores de reducción de siniestralidad? ¿Los contratos de inversión mixta contemplan cláusulas de seguridad vial?</p>
+
+        <blockquote><p>Si la respuesta es no, estamos invirtiendo $397 mil millones en infraestructura que puede matar más gente.</p></blockquote>
+
+        <h3>Lo que ANASEVI propone</h3>
+        <ol>
+            <li><strong>Auditorías de seguridad vial obligatorias</strong> en los 18 proyectos de Banobras y en todos los tramos de la SICT</li>
+            <li><strong>Indicadores de siniestralidad</strong> como parte de los estándares de desempeño en los contratos CMRO e inversión mixta</li>
+            <li><strong>Diseño vial con enfoque de Sistema Seguro</strong>, priorizando barreras centrales, señalización inteligente, reducción de velocidad en zonas de riesgo y protección de usuarios vulnerables</li>
+            <li><strong>Transparencia</strong>: que la SICT y Banobras publiquen los estudios de seguridad vial de cada proyecto como condición para su aprobación</li>
+        </ol>
+
+        <h3>No es un tema menor</h3>
+        <p>$397 mil millones es una oportunidad histórica. Pero una oportunidad sin seguridad vial es una oportunidad para que más familias pierdan a los suyos.</p>
+
+        <blockquote><p>Un avión lleno de personas se estrella en México cada semana. Cada semana. Y no aparece en los titulares.</p></blockquote>
+
+        <p>Los kilómetros nuevos no sirven si los usuarios no llegan vivos a su destino.</p>
+
+        <p><strong>Es hora de que la inversión en carreteras sea inversión en vidas.</strong></p>
+
+        <p class="author-bio">Dr. Arturo Cervantes Trejo es presidente de ANASEVI, epidemiólogo y consultor internacional en seguridad vial. Investigador asociado del Harvard Program on the Global Demography of Aging.</p>
+    </div>
+</section>
+
+<!-- DESCARGA PDF -->
+<section class="section section--light">
+    <div class="container">
+        <div class="download-section">
+            <h3>📥 Descarga el artículo completo</h3>
+            <p>Obtén el análisis en formato PDF para compartir con tomadores de decisiones, colegas y medios.</p>
+            <a href="assets/articulo-carreteras-2026.pdf" class="btn btn--large btn--white" download>📑 Descargar artículo (PDF)</a>
+            <p style="margin-top: 16px; font-size: 13px; opacity: 0.7;">Libre uso con crédito: Dr. Arturo Cervantes Trejo / Observatorio de Seguridad Vial / ANASEVI</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__content">
+            <p>© 2026 Observatorio de Seguridad Vial · ANASEVI</p>
+            <p>Datos abiertos · Evidencia para políticas públicas · Agenda 2030</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Comparativo internacional - Bar chart
+const ctxComp = document.getElementById('chartComparativo').getContext('2d');
+new Chart(ctxComp, {
+    type: 'bar',
+    data: {
+        labels: ['Lituania', 'Corea del Sur', 'Noruega', 'México'],
+        datasets: [{
+            label: 'Cambio en muertes viales 2014-2024 (%)',
+            data: [-54, -47, -40, 4.8],
+            backgroundColor: [
+                '#4C9F38', '#4C9F38', '#4C9F38', '#E5243B'
+            ],
+            borderRadius: 6,
+            borderSkipped: false
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                callbacks: {
+                    label: function(ctx) {
+                        const v = ctx.raw;
+                        return v > 0 ? '+' + v + '%' : v + '%';
+                    }
+                }
+            }
+        },
+        scales: {
+            y: {
+                grid: { color: 'rgba(255,255,255,0.08)' },
+                ticks: { color: 'rgba(255,255,255,0.6)', callback: v => v + '%' },
+                suggestedMin: -60,
+                suggestedMax: 10
+            },
+            x: {
+                grid: { display: false },
+                ticks: { color: 'rgba(255,255,255,0.8)', font: { weight: '600' } }
+            }
+        }
+    }
+});
+
+// Tendencia muertes viales México - Line chart
+const ctxTend = document.getElementById('chartTendencia').getContext('2d');
+new Chart(ctxTend, {
+    type: 'line',
+    data: {
+        labels: ['2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024'],
+        datasets: [{
+            label: 'Muertes viales',
+            data: [15886, 16039, 16185, 15854, 16120, 15954, 13764, 16128, 16421, 16772, 16654],
+            borderColor: '#E5243B',
+            backgroundColor: 'rgba(229,36,59,0.1)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 5,
+            pointBackgroundColor: '#E5243B',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                callbacks: {
+                    label: function(ctx) {
+                        return ctx.raw.toLocaleString() + ' muertes';
+                    },
+                    afterLabel: function(ctx) {
+                        if (ctx.dataIndex === 6) return '(Baja por COVID-19)';
+                        return '';
+                    }
+                }
+            }
+        },
+        scales: {
+            y: {
+                grid: { color: 'rgba(255,255,255,0.08)' },
+                ticks: { color: 'rgba(255,255,255,0.6)', callback: v => v.toLocaleString() },
+                suggestedMin: 13000,
+                suggestedMax: 17500
+            },
+            x: {
+                grid: { display: false },
+                ticks: { color: 'rgba(255,255,255,0.8)' }
+            }
+        }
+    }
+});
+</script>
+</body>
+</html>
