@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>México no se volvió más seguro — aprendió a contar diferente | Observatorio de Seguridad Vial</title>
+    <meta name="description" content="Análisis del desplazamiento estadístico en violencia letal en México: homicidios bajan en el papel, pero suicidios, desapariciones y 'delitos contra la vida' suben.">
+    <meta property="og:title" content="México no se volvió más seguro — aprendió a contar diferente">
+    <meta property="og:description" content="El gobierno reporta -40% en homicidios. Pero los suicidios suben 11.5%, las desapariciones aumentan y periodistas documentan reclasificación masiva.">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .article { max-width: 780px; margin: 0 auto; padding: 120px 24px 80px; }
+        .article__tag { display: inline-block; background: #dc2626; color: white; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+        .article__date { color: #64748b; font-size: 0.9rem; margin-bottom: 8px; }
+        .article__title { font-size: 2.2rem; font-weight: 900; line-height: 1.15; margin-bottom: 16px; color: #0f172a; }
+        .article__subtitle { font-size: 1.15rem; color: #475569; line-height: 1.6; margin-bottom: 32px; border-left: 4px solid #dc2626; padding-left: 16px; }
+        .article__author { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid #e2e8f0; }
+        .article__author-name { font-weight: 700; color: #0f172a; }
+        .article__author-role { font-size: 0.85rem; color: #64748b; }
+        .article__body { font-size: 1.05rem; line-height: 1.8; color: #1e293b; }
+        .article__body p { margin-bottom: 20px; }
+        .article__body h2 { font-size: 1.4rem; font-weight: 700; margin: 40px 0 16px; color: #0f172a; }
+        .article__body strong { color: #0f172a; }
+        .article__body blockquote { border-left: 4px solid #dc2626; padding: 16px 20px; margin: 24px 0; background: #fef2f2; border-radius: 0 8px 8px 0; font-style: italic; color: #991b1b; }
+
+        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 32px 0; }
+        .data-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center; }
+        .data-card__number { font-size: 2rem; font-weight: 900; color: #dc2626; }
+        .data-card__label { font-size: 0.8rem; color: #64748b; margin-top: 4px; line-height: 1.3; }
+        .data-card--dark { background: #0f172a; border-color: #0f172a; }
+        .data-card--dark .data-card__number { color: #fbbf24; }
+        .data-card--dark .data-card__label { color: #94a3b8; }
+
+        .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e2e8f0; }
+        .sources h3 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; }
+        .sources ol { font-size: 0.85rem; color: #64748b; line-height: 1.8; padding-left: 20px; }
+        .sources a { color: #2563eb; }
+
+        .share-box { margin-top: 40px; padding: 24px; background: #f0f9ff; border-radius: 12px; text-align: center; }
+        .share-box__title { font-weight: 700; margin-bottom: 8px; }
+        .share-box__tags { color: #2563eb; font-size: 0.9rem; }
+
+        .back-link { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .back-link:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            .article { padding-top: 90px; }
+            .article__title { font-size: 1.6rem; }
+            .data-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <nav class="nav container">
+        <div class="nav__logo">
+            <span class="nav__logo-icon">🔭</span>
+            <div>
+                <a href="index.html" style="text-decoration:none; color:inherit;">
+                    <div class="nav__logo-title">Observatorio de Seguridad Vial</div>
+                    <div class="nav__logo-sub">ANASEVI · Datos que salvan vidas</div>
+                </a>
+            </div>
+        </div>
+        <ul class="nav__links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#motociclistas">Motociclistas</a></li>
+            <li><a href="index.html#reportes">Reportes</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Menú">☰</button>
+    </nav>
+</header>
+
+<!-- ARTICLE -->
+<article class="article">
+    <a href="index.html" class="back-link">← Volver al Observatorio</a>
+
+    <span class="article__tag">🔴 Alerta del Observatorio</span>
+    <div class="article__date">7 de marzo de 2026</div>
+    <h1 class="article__title">México no se volvió más seguro — aprendió a contar diferente</h1>
+    <p class="article__subtitle">El gobierno reporta -40% en homicidios dolosos. Pero los suicidios suben 11.5%, las desapariciones aumentan y periodistas documentan reclasificación masiva de muertes violentas en Sinaloa. ¿Estamos ante una mejora real o un desplazamiento estadístico?</p>
+
+    <div class="article__author">
+        <div>
+            <div class="article__author-name">Dr. Arturo Cervantes Trejo</div>
+            <div class="article__author-role">Epidemiólogo · Especialista en violencia y lesiones · ANASEVI</div>
+        </div>
+    </div>
+
+    <!-- KEY DATA -->
+    <div class="data-grid">
+        <div class="data-card">
+            <div class="data-card__number">-40%</div>
+            <div class="data-card__label">Homicidios dolosos según el gobierno (sep 2024 – ene 2026)</div>
+        </div>
+        <div class="data-card data-card--dark">
+            <div class="data-card__number">+38</div>
+            <div class="data-card__label">Muertes violentas reclasificadas en Sinaloa solo en diciembre 2025</div>
+        </div>
+        <div class="data-card">
+            <div class="data-card__number">+11.5%</div>
+            <div class="data-card__label">Intentos de suicidio atendidos (ene-feb 2026 vs 2025)</div>
+        </div>
+        <div class="data-card data-card--dark">
+            <div class="data-card__number">8/día</div>
+            <div class="data-card__label">Intentos de suicidio atendidos diariamente en México</div>
+        </div>
+    </div>
+
+    <div class="article__body">
+
+        <p>En diciembre de 2025, en Sinaloa, apareció el cuerpo de un hombre maniatado, con señas de tortura y un mensaje junto al cadáver. Su muerte no fue registrada como homicidio doloso. Se clasificó como "causa de muerte por determinar".</p>
+
+        <p>No fue un caso aislado. El periódico <strong>Noroeste</strong> documentó que, solo en ese mes, la Fiscalía de Sinaloa dejó fuera del conteo de homicidios al menos 38 muertes violentas, reclasificándolas bajo categorías como "enfrentamiento" o "agresión a la autoridad". Donde la Fiscalía contó 128 homicidios, los periodistas sumaron 166 — sin contar 10 cuerpos hallados en fosas clandestinas.</p>
+
+        <p>Esto importa porque el gobierno federal ha construido uno de sus relatos más poderosos sobre un número: <strong>-40% en homicidios dolosos desde septiembre de 2024</strong>. En Jalisco, la presidenta Sheinbaum presumió una reducción del 47%. Las cifras son reales — en el sentido de que efectivamente aparecen en los reportes del SESNSP. Lo que no es real es que reflejen lo que sucede en las calles.</p>
+
+        <h2>El desplazamiento estadístico</h2>
+
+        <p><strong>México Evalúa</strong> lo ha señalado con precisión: mientras los homicidios dolosos bajan, los "delitos contra la vida y la integridad corporal" — una categoría más amplia — suben. Las desapariciones aumentan. Y los suicidios se disparan.</p>
+
+        <p>Según el <strong>Boletín Epidemiológico de la Secretaría de Salud</strong>, hasta el 14 de febrero de 2026 se atendieron 347 casos de intento de suicidio — casi 8 por día —, un incremento de 11.5% respecto al mismo periodo de 2025. Las lesiones autoinfligidas por ahorcamiento crecieron 59%. Los casos de depresión atendidos suman 13,448 (299 por día), con las mujeres representando 2.5 veces más casos que los hombres.</p>
+
+        <blockquote>"Es muy claro el manejo de la Fiscalía en términos de reclasificación de homicidios para no contarlos. Hacer como que la cosa está bajando cuando no es así." — Adrián López, director de Noroeste</blockquote>
+
+        <h2>La dimensión de género: víspera del 8 de marzo</h2>
+
+        <p>De los 13,448 casos de depresión atendidos en lo que va de 2026, <strong>9,667 son mujeres</strong> (72%). Además: 172 mujeres fueron atendidas por envenenamiento autoinfligido con analgésicos. 225 con sedantes y psicotrópicos. <strong>398 mujeres atendidas por ideación suicida</strong>. Detrás de cada cifra hay una mujer que el sistema no alcanzó a tiempo.</p>
+
+    </div>
+
+    <!-- SUICIDIO DATA -->
+    <div class="data-grid">
+        <div class="data-card">
+            <div class="data-card__number">104,606</div>
+            <div class="data-card__label">Suicidios en México, 2010-2024 (INEGI)</div>
+        </div>
+        <div class="data-card">
+            <div class="data-card__number">9,051</div>
+            <div class="data-card__label">Suicidios en 2024 (máximo histórico)</div>
+        </div>
+        <div class="data-card">
+            <div class="data-card__number">+59%</div>
+            <div class="data-card__label">Ahorcamiento autoinfligido (2026 vs 2025)</div>
+        </div>
+        <div class="data-card">
+            <div class="data-card__number">9,667</div>
+            <div class="data-card__label">Mujeres atendidas por depresión en 2026</div>
+        </div>
+    </div>
+
+    <div class="article__body">
+
+        <h2>La trampa del número único</h2>
+
+        <p>El INEGI registra una tendencia inequívoca: de 7,896 suicidios en 2020 a 9,051 en 2024. Son 104,606 personas en 15 años. Esto no es una crisis emergente — es una <strong>epidemia instalada</strong>.</p>
+
+        <p>El problema de medir la seguridad de un país solo con homicidios dolosos es que reduce la violencia letal a una categoría fácilmente manipulable. Un cuerpo torturado se vuelve "causa por determinar". Un enfrentamiento desaparece del conteo. Mientras tanto, la gente que se quita la vida porque el sistema de salud mental es inexistente no aparece en las conferencias mañaneras.</p>
+
+        <h2>La ciencia no miente — las estadísticas sí, cuando alguien las manipula</h2>
+
+        <p>Desde la epidemiología, sabemos que la <strong>violencia letal es un sistema</strong>: homicidios, suicidios, muertes por siniestros viales y otras causas externas están interconectados. Cuando un indicador baja artificialmente y los demás suben, no estamos ante una mejora — estamos ante un desplazamiento.</p>
+
+        <p>México necesita un <strong>sistema de vigilancia epidemiológica de la violencia letal</strong> que sea independiente, transparente y resistente a la manipulación política. Lo que Noroeste hizo en Sinaloa — ir al terreno, verificar cada caso — es exactamente lo que debería hacer un observatorio nacional de mortalidad por causas externas.</p>
+
+        <p><strong>No celebremos números huecos. Preguntemos las preguntas correctas:</strong> ¿cuántas personas mueren violentamente en México? ¿Cuántas se quitan la vida? ¿Cuántas desaparecen? Y sobre todo: ¿por qué seguimos contando mal?</p>
+    </div>
+
+    <!-- SOURCES -->
+    <div class="sources">
+        <h3>Fuentes</h3>
+        <ol>
+            <li>Animal Político (2 mar 2026): <a href="https://animalpolitico.com/seguridad/homicidios-delitos-desapariciones-metodologia-federal" target="_blank">"Bajan homicidios, suben 'delitos contra la vida' y desapariciones"</a></li>
+            <li>Excélsior (3 mar 2026): <a href="https://www.excelsior.com.mx/nacional/depresion-y-suicidio-males-persistentes" target="_blank">"Depresión y suicidio, males persistentes"</a></li>
+            <li>Noroeste (dic 2025): Investigación sobre reclasificación de homicidios en Sinaloa</li>
+            <li>SESNSP: Estadísticas de incidencia delictiva, enero 2026</li>
+            <li>Boletín Epidemiológico, Secretaría de Salud: Semana 16, 2026</li>
+            <li>INEGI: Estadísticas de mortalidad por suicidio, 2010-2024</li>
+            <li>México Evalúa: Análisis de desplazamiento estadístico en delitos contra la vida</li>
+        </ol>
+    </div>
+
+    <!-- SHARE -->
+    <div class="share-box">
+        <div class="share-box__title">Comparte este análisis</div>
+        <div class="share-box__tags">#CienciaPrevieneViolencia #Ahaukine #8M #SaludMental #SeguridadPública</div>
+    </div>
+
+    <!-- LÍNEA DE AYUDA -->
+    <div style="margin-top: 32px; padding: 20px; background: #fef3c7; border-radius: 12px; text-align: center; font-size: 0.9rem;">
+        <strong>Si tú o alguien que conoces necesita ayuda:</strong><br>
+        Línea de la Vida: <strong>800 911 2000</strong> (24 horas, gratuita)<br>
+        SAPTEL: <strong>55 5259 8121</strong>
+    </div>
+
+</article>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__content">
+            <p>© 2026 Observatorio de Seguridad Vial · ANASEVI</p>
+            <p>Datos abiertos · Evidencia para políticas públicas · Agenda 2030</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
